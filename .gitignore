@@ -1,0 +1,14 @@
+# React / Node
+frontend/node_modules/
+frontend/dist/
+
+# .NET
+Backend/bin/
+Backend/obj/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+frontend/.env

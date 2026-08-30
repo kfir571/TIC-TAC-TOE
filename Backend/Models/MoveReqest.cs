@@ -1,1 +1,1 @@
-public record MoveRequest(int position);
+public record MoveRequest(int position, int gameType);

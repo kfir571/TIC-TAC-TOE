@@ -31,15 +31,17 @@ app.MapGet("/game/", () =>
 
 app.MapPost("game/play",(
     GameService gameService, 
-    MoveRequest request) =>
+    MoveRequest moveRequest) =>
 {
-    MoveResult result = gameService.Play(request.position);
+    MoveResult result = gameService.Play(moveRequest);
     return Results.Ok(result);
 });
 
-app.MapPost("/game/reaset", (GameService gameService) =>
+app.MapPost("/game/reaset", (
+    GameService gameService, 
+    MoveRequest moveRequest) =>
 {
-    gameService.Reset();
+    gameService.Reset(moveRequest.gameType);
     return Results.Ok(gameService.GetGameState());
 });
 
